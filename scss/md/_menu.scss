@@ -4,7 +4,7 @@
 }
 body {
   font-family: oriflame;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 div.menu {
@@ -36,7 +36,7 @@ div.menu > nav > div:nth-of-type(1) {
   }
   > div:nth-of-type(1) {
     padding: 10px;
-    > span:nth-of-type(2) {
+    > span:nth-of-type(1) {
       font-size: 30px;
       font-weight: 300;
       cursor: pointer;
@@ -45,7 +45,7 @@ div.menu > nav > div:nth-of-type(1) {
         font-weight: bold;
       }
     }
-    > span:nth-of-type(1) {
+    > div.container {
       display: none;
     }
   }
@@ -102,6 +102,13 @@ div.menu > nav > div:nth-of-type(1) {
   > div:nth-of-type(6) {
     display: none;
   }
+}
+
+div.ourStory {
+  display: none;
+}
+div.joinUs {
+  display: none;
 }
 
 /*menu-center*/
@@ -223,6 +230,47 @@ div.menu > nav > div:nth-of-type(3) {
         }
       }
     }
+  }
+}
+div.divSearchMedia {
+  display: none;
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  top: 60px;
+  z-index: 999;
+  background-color: white;
+  > input {
+    height: 40px;
+    line-height: 40px;
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    top: 15px;
+    padding-left: 50px;
+    border: none;
+    outline: none;
+    background-color: #f5f5f5;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    &:focus {
+      box-shadow: 2px 2px 2px rgb(192, 192, 192);
+    }
+  }
+  > span:nth-of-type(1) {
+    position: absolute;
+    line-height: 40px;
+    padding-left: 65px;
+    top: 15px;
+  }
+  > span:nth-of-type(2) {
+    position: absolute;
+    line-height: 40px;
+    right: 65px;
+    top: 15px;
   }
 }
 
@@ -944,7 +992,11 @@ div.topMenu {
     padding: 5px;
     border: none;
     outline: none;
-    background-color: #f5f5f5;
+    background-color: white;
+    &:focus {
+      background-color: #f5f5f5;
+      border-bottom-left-radius: 5px;
+    }
   }
   > button:nth-of-type(1) {
     width: 49%;
@@ -1645,99 +1697,110 @@ div.carousel-item:nth-of-type(1) {
 div.carousel-item:nth-of-type(2) {
   background-color: #f9f7f8;
 }
-div.carousel-item:nth-of-type(1) > img {
-  width: 60%;
-  height: 100%;
+div.carousel-item:nth-of-type(1) {
+  > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  > img:nth-of-type(2) {
+    display: none;
+  }
 }
-div.carousel-item:nth-of-type(2) > img {
-  width: 60%;
-  height: inherit;
-}
-div.carousel-item:nth-of-type(3) > img {
-  width: 100%;
-  height: inherit;
-}
-
-div.carousel-item {
-  > div.carousel-caption {
-    width: 400px;
-    height: auto;
-    position: absolute;
-    left: 30%;
-    bottom: 25%;
-    text-align: center;
-    color: #308e97;
-    // background-color: deeppink;
-
-    > h5 {
-      font-size: 18px;
-    }
-    > p {
-      font-size: 20px;
-      font-weight: bold;
-    }
-    > div {
-      width: 300px;
-      height: 50px;
-      line-height: 50px;
-      background-color: rgb(175, 175, 175);
-      font-size: 16px;
-      color: white;
-      text-align: center;
-      position: absolute;
-      cursor: pointer;
-      font-weight: bold;
-      left: calc(50% - 300px / 2);
-      border-radius: 50px;
-      -webkit-border-radius: 50px;
-      -moz-border-radius: 50px;
-      -ms-border-radius: 50px;
-      -o-border-radius: 50px;
-      &:hover {
-        background-color: rgb(227, 226, 226);
-        color: black;
-      }
-    }
+div.carousel-item:nth-of-type(2) {
+  > img {
+    width: 100%;
+    height: inherit;
+    display: block;
+  }
+  > img:nth-of-type(2) {
+    display: none;
   }
 }
 div.carousel-item:nth-of-type(3) {
-  > div.carousel-caption {
-    width: 400px;
-    height: auto;
-    position: absolute;
-    left: 30%;
-    bottom: 25%;
-    text-align: center;
-    color: black;
+  > img {
+    width: 100%;
+    height: inherit;
+    display: block;
+  }
+  > img:nth-of-type(2) {
+    display: none;
+  }
+}
 
-    > h5 {
-      font-size: 18px;
+div.carousel-item > div.carousel-caption {
+  width: 40%;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  text-align: center;
+  color: #808080;
+
+  > h5 {
+    font-size: 18px;
+  }
+  > p {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  > div {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgba(0, 0, 0, 0.581);
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    cursor: pointer;
+    font-weight: bold;
+    left: calc(50% - 200px / 2);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.598);
+      color: black;
     }
-    > p {
-      font-size: 20px;
-      font-weight: bold;
-    }
-    > div {
-      width: 200px;
-      height: 50px;
-      line-height: 50px;
-      background-color: rgba(0, 0, 0, 0.581);
-      font-size: 16px;
-      color: white;
-      text-align: center;
-      position: absolute;
-      cursor: pointer;
-      font-weight: bold;
-      left: calc(50% - 200px / 2);
-      border-radius: 50px;
-      -webkit-border-radius: 50px;
-      -moz-border-radius: 50px;
-      -ms-border-radius: 50px;
-      -o-border-radius: 50px;
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.598);
-        color: black;
-      }
+  }
+}
+div.carousel-item:nth-of-type(3) > div.carousel-caption {
+  width: 40%;
+  height: auto;
+  position: absolute;
+  text-align: center;
+  color: #808080;
+
+  > h5 {
+    font-size: 18px;
+  }
+  > p {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  > div {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgba(0, 0, 0, 0.581);
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    cursor: pointer;
+    font-weight: bold;
+    left: calc(50% - 200px / 2);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.598);
+      color: black;
     }
   }
 }
@@ -1820,6 +1883,17 @@ div.new {
       height: auto;
     }
   }
+  > div > div.fiveStar {
+    position: absolute;
+    top: 90%;
+    > span {
+      color: rgb(128, 205, 208);
+      cursor: pointer;
+    }
+    > span:nth-of-type(6) {
+      color: gray;
+    }
+  }
   > div.a {
     position: relative;
 
@@ -1885,7 +1959,6 @@ div.new {
     div.img {
       > img {
         width: 93%;
-        height: 150px;
         // grid-column-start: 1;
         // grid-column-end: 2;
         border-radius: 7px;
@@ -1902,7 +1975,7 @@ div.new {
       line-height: 40px;
       text-align: center;
       position: absolute;
-      top: 35%;
+      top: 28%;
       right: 25px;
       box-shadow: 2px 2px 2px rgb(179, 179, 179);
       border-radius: 50%;
@@ -1936,6 +2009,8 @@ div.new {
         font-size: 16px;
         font-weight: 500;
         display: inline-block;
+        position: relative;
+        bottom: 10px;
       }
       > p:nth-of-type(3) {
         font-size: 16px;
@@ -1944,6 +2019,8 @@ div.new {
         margin-left: 10px;
         text-decoration: line-through;
         color: rgb(166, 165, 165);
+        position: relative;
+        bottom: 10px;
       }
     }
   }
@@ -1970,7 +2047,6 @@ div.new {
     div.img {
       > img {
         width: 93%;
-        height: 150px;
         // grid-column-start: 1;
         // grid-column-end: 2;
         border-radius: 7px;
@@ -1987,7 +2063,7 @@ div.new {
       line-height: 40px;
       text-align: center;
       position: absolute;
-      top: 35%;
+      top: 28%;
       right: 25px;
       box-shadow: 2px 2px 2px rgb(179, 179, 179);
       border-radius: 50%;
@@ -2021,6 +2097,8 @@ div.new {
         font-size: 16px;
         font-weight: 500;
         display: inline-block;
+        position: relative;
+        bottom: 10px;
       }
       > p:nth-of-type(3) {
         font-size: 16px;
@@ -2029,6 +2107,8 @@ div.new {
         margin-left: 10px;
         text-decoration: line-through;
         color: rgb(166, 165, 165);
+        position: relative;
+        bottom: 10px;
       }
     }
   }
@@ -2054,7 +2134,6 @@ div.new {
     div.img {
       > img {
         width: 93%;
-        height: 150px;
         // grid-column-start: 1;
         // grid-column-end: 2;
         border-radius: 7px;
@@ -2071,7 +2150,7 @@ div.new {
       line-height: 40px;
       text-align: center;
       position: absolute;
-      top: 35%;
+      top: 28%;
       right: 25px;
       box-shadow: 2px 2px 2px rgb(179, 179, 179);
       border-radius: 50%;
@@ -2105,6 +2184,8 @@ div.new {
         font-size: 16px;
         font-weight: 500;
         display: inline-block;
+        position: relative;
+        bottom: 10px;
       }
       > p:nth-of-type(3) {
         font-size: 16px;
@@ -2113,6 +2194,8 @@ div.new {
         margin-left: 10px;
         text-decoration: line-through;
         color: rgb(166, 165, 165);
+        position: relative;
+        bottom: 10px;
       }
     }
   }
@@ -2156,6 +2239,10 @@ div.offerTop {
   }
 }
 
+div.firstOffer {
+  display: none;
+}
+
 div.offer {
   width: 100%;
   display: grid;
@@ -2170,6 +2257,17 @@ div.offer {
     > img {
       width: auto;
       height: auto;
+    }
+  }
+  > div > div.fiveStar {
+    position: absolute;
+    top: 90%;
+    > span {
+      color: rgb(128, 205, 208);
+      cursor: pointer;
+    }
+    > span:nth-of-type(6) {
+      color: gray;
     }
   }
   > div.a {
@@ -2232,14 +2330,14 @@ div.offer {
       }
       > p:nth-of-type(2) {
         position: relative;
-        bottom: 4%;
+        top: 45px;
         font-size: 14px;
         font-weight: 600;
         display: inline-block;
       }
       > p:nth-of-type(3) {
         position: relative;
-        bottom: 4%;
+        top: 45px;
         font-size: 14px;
         font-weight: 400;
         display: inline-block;
@@ -2309,14 +2407,14 @@ div.offer {
       }
       > p:nth-of-type(2) {
         position: relative;
-        bottom: 4%;
+        top: 45px;
         font-size: 14px;
         font-weight: 600;
         display: inline-block;
       }
       > p:nth-of-type(3) {
         position: relative;
-        bottom: 4%;
+        top: 45px;
         font-size: 14px;
         font-weight: 400;
         display: inline-block;
@@ -2336,7 +2434,7 @@ div.offer {
         -o-border-radius: 50%;
         display: inline-block;
         position: relative;
-        bottom: 1%;
+        top: 45px;
       }
       > div:nth-of-type(2) {
         width: 15px;
@@ -2349,7 +2447,7 @@ div.offer {
         -o-border-radius: 50%;
         display: inline-block;
         position: relative;
-        bottom: 1%;
+        top: 45px;
         left: 5px;
       }
       > div:nth-of-type(3) {
@@ -2363,7 +2461,7 @@ div.offer {
         -o-border-radius: 50%;
         display: inline-block;
         position: relative;
-        bottom: 1%;
+        top: 45px;
         left: 10px;
       }
     }
@@ -2428,14 +2526,14 @@ div.offer {
       }
       > p:nth-of-type(2) {
         position: relative;
-        bottom: 4%;
+        top: 23px;
         font-size: 14px;
         font-weight: 600;
         display: inline-block;
       }
       > p:nth-of-type(3) {
         position: relative;
-        bottom: 4%;
+        top: 23px;
         font-size: 14px;
         font-weight: 400;
         display: inline-block;
@@ -2454,7 +2552,7 @@ div.offer {
         -o-border-radius: 50%;
         display: inline-block;
         position: relative;
-        bottom: 1%;
+        top: 23px;
       }
       > div:nth-of-type(1) {
         background-color: #100f0b;
@@ -2513,7 +2611,7 @@ div.offer {
     }
     div.img {
       position: relative;
-      top: 15px;
+      top: 20px;
       > img {
         width: 90%;
         height: 150px;
@@ -2566,14 +2664,14 @@ div.offer {
       }
       > p:nth-of-type(2) {
         position: relative;
-        bottom: 4%;
+        bottom: 20px;
         font-size: 14px;
         font-weight: 600;
         display: inline-block;
       }
       > p:nth-of-type(3) {
         position: relative;
-        bottom: 4%;
+        bottom: 20px;
         font-size: 14px;
         font-weight: 400;
         display: inline-block;
@@ -2586,7 +2684,7 @@ div.offer {
   }
   > div.e {
     position: relative;
-    left: 10px;
+    padding-left: 10px;
     > div:nth-of-type(1) {
       z-index: -1;
       width: 190px;
@@ -2594,7 +2692,7 @@ div.offer {
       background-color: #f0effc;
       position: absolute;
       bottom: 30%;
-      right: 0;
+      right: 10px;
       border-bottom-left-radius: 190px;
       border-top-left-radius: 190px;
     }
@@ -2679,27 +2777,28 @@ div.mustHave {
     bottom: 100%;
     background-color: #f5f5f5;
     > h2 {
-      position: absolute;
-      left: 12%;
-      top: 25%;
-      font-size: 35px;
+      padding-top: 20px;
+      position: relative;
+      text-align: center;
+      font-size: 20px;
       font-weight: bold;
       color: #000000dd;
     }
     > p {
-      position: absolute;
-      top: 50%;
-      left: 12%;
+      width: 80%;
+      position: relative;
+      left: 10%;
+      text-align: center;
       font-size: 14px;
     }
     div {
       width: 150px;
-      height: 45px;
-      line-height: 45px;
-      position: absolute;
-      top: 75%;
-      left: 12%;
-      font-size: 16px;
+      height: 40px;
+      line-height: 40px;
+      position: relative;
+      left: calc(50% - 150px / 2);
+      top: 10px;
+      font-size: 14px;
       text-align: center;
       border: 2px solid rgba(128, 128, 128, 0.869);
       border-radius: 50px;
@@ -2727,22 +2826,21 @@ div.astaxanthin {
     color: #000000c0;
     font-weight: bold;
     text-align: center;
-    font-size: 40px;
-    margin-right: 20px;
+    font-size: 30px;
   }
   > p {
     text-align: center;
-    margin-right: 90px;
-    width: 85%;
-    padding-left: 30px;
+    width: 65%;
+    font-size: 20px;
+    margin-left: 17.5%;
   }
   > div {
-    display: inline;
+    display: block;
     width: 120px;
     height: auto;
     position: absolute;
-    top: 55%;
-    right: 2%;
+    top: 105%;
+    right: calc(50% - 120px / 2);
     padding: 5px 10px;
     font-size: 14px;
     text-align: center;
@@ -2771,13 +2869,24 @@ div.antioxidant {
   grid-template-columns: 49% 17% 17% 17%;
   margin-bottom: 30px;
   position: relative;
-  top: 320px;
+  top: 340px;
   > div {
     width: auto;
     height: auto;
     > img {
       width: auto;
       height: auto;
+    }
+  }
+  > div > div.fiveStar {
+    position: absolute;
+    top: 90%;
+    > span {
+      color: rgb(128, 205, 208);
+      cursor: pointer;
+    }
+    > span:nth-of-type(6) {
+      color: gray;
     }
   }
   > div.a {
@@ -2811,7 +2920,6 @@ div.antioxidant {
     > div.img {
       > img {
         width: 93%;
-        height: 150px;
         // grid-column-start: 1;
         // grid-column-end: 2;
         border-radius: 7px;
@@ -2828,7 +2936,7 @@ div.antioxidant {
       line-height: 40px;
       text-align: center;
       position: absolute;
-      top: 35%;
+      top: 28%;
       right: 20px;
       border-radius: 50%;
       background-color: white;
@@ -2862,6 +2970,8 @@ div.antioxidant {
         font-size: 14px;
         font-weight: 500;
         display: inline-block;
+        position: relative;
+        bottom: 15px;
       }
       > p:nth-of-type(3) {
         font-size: 14px;
@@ -2870,6 +2980,8 @@ div.antioxidant {
         margin-left: 10px;
         text-decoration: line-through;
         color: rgb(166, 165, 165);
+        position: relative;
+        bottom: 15px;
       }
     }
   }
@@ -2901,7 +3013,6 @@ div.antioxidant {
     div.img {
       > img {
         width: 93%;
-        height: 150px;
         // grid-column-start: 1;
         // grid-column-end: 2;
         border-radius: 7px;
@@ -2918,7 +3029,7 @@ div.antioxidant {
       line-height: 40px;
       text-align: center;
       position: absolute;
-      top: 35%;
+      top: 28%;
       right: 20px;
       border-radius: 50%;
       background-color: white;
@@ -2954,7 +3065,8 @@ div.antioxidant {
         display: inline-block;
         margin-top: 24px;
         padding-left: 10px;
-
+        position: relative;
+        bottom: 15px;
       }
     }
   }
@@ -2985,7 +3097,6 @@ div.antioxidant {
     > div.img {
       > img {
         width: 93%;
-        height: 150px;
         // grid-column-start: 1;
         // grid-column-end: 2;
         border-radius: 7px;
@@ -3002,7 +3113,7 @@ div.antioxidant {
       line-height: 40px;
       text-align: center;
       position: absolute;
-      top: 35%;
+      top: 28%;
       right: 20px;
       border-radius: 50%;
       background-color: white;
@@ -3038,6 +3149,8 @@ div.antioxidant {
         display: inline-block;
         margin-top: 24px;
         padding-left: 10px;
+        position: relative;
+        bottom: 15px;
       }
     }
   }
@@ -3045,12 +3158,12 @@ div.antioxidant {
 
 svg.beauty {
   position: relative;
-  top: 350px;
+  top: 360px;
   left: calc(50% - 150px / 2);
 }
 p.beauty {
   position: relative;
-  top: 370px;
+  top: 380px;
   text-align: center;
   color: gray;
   font-size: 15px;
@@ -3075,7 +3188,7 @@ div.beauty {
       -moz-border-radius: 10px;
       -ms-border-radius: 10px;
       -o-border-radius: 10px;
-}
+    }
     > div:nth-of-type(1) {
       width: 68.5%;
       height: 350px;
@@ -3083,7 +3196,7 @@ div.beauty {
       top: 0;
       left: 0;
       z-index: 5;
-      margin:0 14%;
+      margin: 0 14%;
       border-radius: 10px;
       -webkit-border-radius: 10px;
       -moz-border-radius: 10px;
@@ -3158,15 +3271,15 @@ div.beauty {
       -moz-border-radius: 10px;
       -ms-border-radius: 10px;
       -o-border-radius: 10px;
-}
+    }
     > div:nth-of-type(1) {
       width: 69%;
-      height:350px;
+      height: 350px;
       position: absolute;
       top: 55.5%;
       right: 0;
       z-index: 5;
-      margin:0 17%;
+      margin: 0 17%;
       border-radius: 10px;
       -webkit-border-radius: 10px;
       -moz-border-radius: 10px;
@@ -3182,7 +3295,7 @@ div.beauty {
       color: rgba(61, 61, 61, 0.86);
       letter-spacing: -0.001cm;
       font-weight: bold;
-      margin:0 20%;
+      margin: 0 20%;
       margin-top: 10px;
       cursor: pointer;
       text-align: center;
@@ -3193,7 +3306,7 @@ div.beauty {
       font-weight: bold;
       color: rgba(61, 61, 61, 0.86);
       cursor: pointer;
-      margin:0 20%;
+      margin: 0 20%;
       margin-top: 10px;
       text-align: center;
       &:hover {
@@ -3380,57 +3493,15 @@ p.topBrands {
 }
 div.topBrands {
   width: 100%;
+  height: 200px;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   position: relative;
-  top: 200px;
-  > div.a {
+  top: 750px;
+  > div {
+    padding: 0 5px;
     > img {
       position: absolute;
-      top: 550px;
-      left: 2%;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      -ms-border-radius: 50%;
-      -o-border-radius: 50%;
-    }
-  }
-  > div.b {
-    > img {
-      position: absolute;
-      top: 550px;
-      left: 26%;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      -ms-border-radius: 50%;
-      -o-border-radius: 50%;
-    }
-  }
-  > div.c {
-    > img {
-      position: absolute;
-      top: 550px;
-      left: 50%;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      -ms-border-radius: 50%;
-      -o-border-radius: 50%;
-    }
-  }
-  > div.d {
-    > img {
-      position: absolute;
-      top: 550px;
-      left: 74%;
       width: 200px;
       height: 200px;
       border-radius: 50%;
@@ -3445,7 +3516,7 @@ div.topBrands {
     height: 45px;
     line-height: 45px;
     position: absolute;
-    top: 800px;
+    top: 250px;
     right: calc(50% - 200px / 2);
     font-size: 15px;
     font-weight: bold;
@@ -3471,7 +3542,7 @@ div.topBrands {
 video {
   position: relative;
   left: 20%;
-  top: 1150px;
+  top: 950px;
   width: 60%;
   height: auto;
 }
@@ -3480,7 +3551,7 @@ div.discover {
   height: 45px;
   line-height: 45px;
   position: relative;
-  top: 1180px;
+  top: 980px;
   left: calc(50% - 280px / 2);
   font-size: 15px;
   font-weight: bold;
@@ -3505,7 +3576,7 @@ div.discover {
 div.standards {
   position: relative;
   width: 100%;
-  top: 1250px;
+  top: 1050px;
   > h2 {
     font-size: 40px;
     font-weight: bold;
@@ -3520,62 +3591,25 @@ div.standards {
 
 div.images {
   width: 100%;
-  display: grid;
-  grid-template-columns: 16.5% 16.5% 16.5% 16.5% 16.5% 16.5%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
   position: relative;
-  > img:nth-of-type(1) {
-    position: absolute;
-    top: 1220px;
-    left: 4%;
-    width: 150px;
-    height: 150px;
-  }
-  > img:nth-of-type(2) {
-    position: absolute;
-    top: 1220px;
-    left: 19%;
-    width: 150px;
-    height: 150px;
-  }
-  > img:nth-of-type(3) {
-    position: absolute;
-    top: 1220px;
-    left: 34%;
-    width: 150px;
-    height: 150px;
-  }
-  > img:nth-of-type(4) {
-    position: absolute;
-    top: 1220px;
-    left: 49%;
-    width: 150px;
-    height: 150px;
-  }
-  > img:nth-of-type(5) {
-    position: absolute;
-    top: 1220px;
-    left: 64%;
-    width: 150px;
-    height: 150px;
-  }
-  > img:nth-of-type(6) {
-    position: absolute;
-    top: 1220px;
-    left: 79%;
-    width: 150px;
-    height: 150px;
+  top: 1050px;
+  > img {
+    width: 16.5%;
   }
 }
 hr.follow {
   position: relative;
-  top: 1400px;
+  top: 1100px;
   width: 100%;
   height: 5px;
   color: lightgray;
 }
 div.follow {
   position: relative;
-  top: 1450px;
+  top: 1180px;
   display: grid;
   grid-template-columns: 40% 60%;
   > div.a {
@@ -3673,7 +3707,7 @@ div.gray {
   width: 100%;
   height: 250px;
   position: relative;
-  top: 1650px;
+  top: 1400px;
   display: grid;
   grid-template-columns: 33% 33% 33%;
   background-color: rgb(239, 239, 239);
@@ -3744,25 +3778,28 @@ div.gray {
     }
   }
 }
+div.grayMedia {
+  display: none;
+}
 
 div.end {
   width: 100%;
-  height: 2000px;
+  height: 1750px;
   > p.end {
     position: relative;
-    top: 1700px;
+    top: 1470px;
     text-align: center;
     font-size: 12px;
   }
   > p.end2 {
     position: relative;
-    top: 1720px;
+    top: 1490px;
     text-align: center;
     font-size: 12px;
   }
   > a.end {
     position: relative;
-    top: 1720px;
+    top: 1510px;
     left: 20%;
     font-size: 12px;
     color: rgba(0, 0, 0, 0.778);
@@ -3774,7 +3811,7 @@ div.end {
   }
   > a.end2 {
     position: relative;
-    top: 1720px;
+    top: 1510px;
     left: 25%;
     font-size: 12px;
     color: rgba(0, 0, 0, 0.778);
