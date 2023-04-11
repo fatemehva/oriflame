@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./icon/css/all.css" type="text/css" />
     <link rel="stylesheet" href="./mdb-ui-kit/css/mdb.min.css" />
+    <link rel="stylesheet" href="./swiper/swiper-bundle.min.css" />
   </head>
   <style>
     @font-face {
@@ -33,6 +34,9 @@
       -moz-border-radius: 10px;
       -ms-border-radius: 10px;
       -o-border-radius: 10px;
+    }
+    .accordion{
+      color: black;
     }
   </style>
   <body>
@@ -1397,20 +1401,39 @@
     </div>
     <!--end make slider-->
     <div class="bottomSlider">
-      <ul>
-        <li>
-          <span class="fa fa-book-open-cover"></span>
-          ECATALOGUE
-        </li>
-        <li>SKIN CARE</li>
-        <li>MAKE-UP</li>
-        <li>FRAGRANCE</li>
-        <li>BATH & BODY</li>
-        <li>HAIR</li>
-        <li>ACCESSORIES</li>
-        <li>WELLNESS</li>
-        <li>MEN</li>
-      </ul>
+      <!-- Swiper -->
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <svg
+              class="catalogueIcon"
+              focusable="false"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              data-testid="CatalogueIcon"
+            >
+              <path
+                d="m18.645 4.407-5.691.758a1.68 1.68 0 0 0-.954.482 1.674 1.674 0 0 0-.955-.482l-5.689-.758A1.398 1.398 0 0 0 3.75 5.813v11.344a1.72 1.72 0 0 0 1.469 1.679l5.69.758a1.375 1.375 0 0 0 1.09-.324 1.377 1.377 0 0 0 1.089.324l5.691-.758a1.72 1.72 0 0 0 1.469-1.679V5.813c0-.863-.736-1.526-1.605-1.406zm-7.533 14.169-5.755-.763a.698.698 0 0 1-.575-.657V5.812c0-.226.149-.384.427-.384h.011l5.69.758a.7.7 0 0 1 .575.657v11.344c0 .229-.153.389-.373.389zm8.107-1.42a.7.7 0 0 1-.574.657l-5.756.763c-.22 0-.373-.16-.373-.389V6.843c0-.308.268-.615.574-.657l5.756-.762c.22 0 .373.159.373.388v11.344z"
+              ></path>
+              <path
+                d="m17.33 7.88-3.062.41a.516.516 0 1 0 .137 1.022l3.062-.41a.517.517 0 0 0 .443-.58.517.517 0 0 0-.58-.442zm0 3.094-3.062.409a.516.516 0 1 0 .137 1.022l3.062-.409a.517.517 0 0 0 .443-.58.52.52 0 0 0-.58-.442zm0 3.093-3.062.409a.516.516 0 1 0 .137 1.022l3.062-.409a.516.516 0 1 0-.137-1.022zM8.789 7.862l-1.177-.157c-.882-.121-1.606.543-1.606 1.406v4.726a1.72 1.72 0 0 0 1.469 1.679l1.178.157a1.397 1.397 0 0 0 1.606-1.406V9.541c0-.831-.646-1.569-1.47-1.679zm.44 6.405c0 .229-.153.389-.373.389l-1.244-.162a.698.698 0 0 1-.575-.657V9.111c0-.226.149-.384.427-.384h.011l1.178.157a.7.7 0 0 1 .575.657v4.726z"
+              ></path>
+            </svg>
+            ECATALOGUE
+          </div>
+          <div class="swiper-slide">SKIN CARE</div>
+          <div class="swiper-slide">MAKE-UP</div>
+          <div class="swiper-slide">FRAGRANCE</div>
+          <div class="swiper-slide">BATH & BODY</div>
+          <div class="swiper-slide">HAIR</div>
+          <div class="swiper-slide">ACCESSORIES</div>
+          <div class="swiper-slide">WELLNESS</div>
+          <div class="swiper-slide">MEN</div>
+          <div class="swiper-slide">Kids & Baby</div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
     </div>
 
     <div class="newTop">
@@ -2013,11 +2036,67 @@
 
     <!-- end make website -->
 
+    <script src="./swiper/swiper-bundle.min.js"></script>
+
     <script src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="./mdb-ui-kit/js/mdb.min.js"></script>
 
     <script>
+      var swiper = new Swiper(".swiper", {
+        slidesPerView: 8,
+        direction: getDirection(),
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        on: {
+          resize: function () {
+            swiper.changeDirection(getDirection());
+          },
+        },
+
+        breakpoints: {
+        // when window width is <= 100px
+        100: {
+            slidesPerView: 3,
+            spaceBetweenSlides: 30
+        },
+        // when window width is <= 576px
+        576: {
+            slidesPerView: 4,
+            spaceBetweenSlides: 30
+        },
+        // when window width is <= 768px
+        768: {
+            slidesPerView: 5,
+            spaceBetweenSlides: 20
+        },
+        // when window width is <= 992px
+        992: {
+            slidesPerView: 6,
+            spaceBetweenSlides: 20
+        },
+        // when window width is <= 1200px
+        1200: {
+            slidesPerView: 8,
+            spaceBetweenSlides: 20
+        },
+        // when window width is <= 1400px
+        1400: {
+            slidesPerView: 9,
+            spaceBetweenSlides: 20
+        }
+    }
+      });
+
+      function getDirection() {
+        var windowWidth = window.innerWidth;
+        var direction = window.innerWidth <= 0 ? "vertical" : "horizontal";
+
+        return direction;
+      }
+
       function myFunction(x) {
         x.classList.toggle("change");
       }
@@ -2179,6 +2258,7 @@
           document.querySelector("div.topSlider").classList.toggle("nonActive");
           this.classList.toggle("fa-close");
         });
+        
 
       // document
       //   .querySelector("div.online>span.fa-comment")
