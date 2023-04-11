@@ -172,6 +172,7 @@
         position: absolute;
         right: 0;
         top: 60px;
+        overflow-y: scroll;
         transform: scale(0, 0);
         -webkit-transform: scale(0, 0);
         -moz-transform: scale(0, 0);
@@ -1200,7 +1201,7 @@
     top: 60px;
     border-right: 2px solid rgb(189, 189, 189);
     z-index: 99;
-    overflow: scroll;
+    overflow-y: scroll;
     transition: 300ms;
     -webkit-transition: 300ms;
     -moz-transition: 300ms;
