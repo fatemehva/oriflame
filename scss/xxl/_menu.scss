@@ -346,7 +346,7 @@ div.menu > nav > div:nth-of-type(3) {
         height: 40px;
         line-height: 40px;
         margin-left: 25px;
-        margin-top: 80%;
+        margin-top: 60%;
         text-align: center;
         background-color: #5fc495;
         color: white;
@@ -1120,7 +1120,171 @@ div.topMenu {
   }
 }
 div.mediaSignIn {
+  font-family: oriflame;
+  width: 38%;
+  height: calc(100vh - 60px);
+  background-color: whitesmoke;
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  top: 60px;
   display: none;
+  overflow-y: scroll;
+  transition: 300ms;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -ms-transition: 300ms;
+  -o-transition: 300ms;
+  transform: scale(0,0);
+  -webkit-transform: scale(0,0);
+  -moz-transform: scale(0,0);
+  -ms-transform: scale(0,0);
+  -o-transform: scale(0,0);
+  >h2 {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  > div.email {
+    width: 90%;
+    > label.email {
+      width: 100%;
+      font-size: 10px;
+      color: gray;
+      margin-left: 15px;
+    }
+    > input {
+      width: 95%;
+      background-color: unset;
+      border: unset;
+      outline: unset;
+      border-bottom: 1px solid gray;
+      margin-left: 15px;
+      &:focus {
+        border-bottom: 1px solid #5fc495;
+      }
+    }
+  }
+  > div.password {
+    width: 90%;
+    > label.password {
+      font-size: 10px;
+      color: gray;
+      margin-top: 20px;
+      margin-left: 15px;
+    }
+    > input {
+      width: 95%;
+      background-color: unset;
+      border: unset;
+      outline: unset;
+      border-bottom: 1px solid gray;
+      margin-left: 15px;
+      &:focus {
+        border-bottom: 1px solid #5fc495;
+      }
+    }
+    > span {
+      margin-left: -10%;
+      &:active {
+        text-decoration: line-through;
+      }
+    }
+  }
+  > input.signIn {
+    width: 85%;
+    height: 40px;
+    margin-left: 15px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #5fc495;
+    color: white;
+    border: unset;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    &:hover {
+      background-color: #489671;
+    }
+  }
+  > a.pass {
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.726);
+    font-weight: bold;
+    margin-left: 32%;
+    text-decoration: underline;
+  }
+  > div.facebook {
+    width: 85%;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    border: 0.5px solid rgb(220, 220, 220);
+    box-shadow: 1px 2px 1px rgb(184, 184, 184);
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    > img {
+      width: 25%;
+      height: 40px;
+      line-height: 40px;
+      display: inline;
+      vertical-align: top;
+    }
+    > p {
+      display: inline;
+    }
+  }
+  > h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.627);
+    margin-top: 15px;
+  }
+  > div.vip {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    background-color: rgb(234, 234, 234);
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      background-color: lightgray;
+    }
+  }
+  > div.brand {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 5px;
+    background-color: rgb(234, 234, 234);
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      background-color: lightgray;
+    }
+  }
+  > a.end {
+    display: inline-block;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.726);
+    font-weight: bold;
+    margin-left: 35%;
+    margin-top: 10px;
+    text-decoration: underline;
+  }
 }
 
 div.mediaMenuFullWidth {
